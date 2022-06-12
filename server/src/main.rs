@@ -7,3 +7,8 @@ fn main() {
 struct Server{
     addr:String,
 }
+//struct implementation
+impl Server{
+  // struc have 2 functionalities:1method or 2.associated function/static function e.g new() 
+  //methods : always take 1st parameter of self(instance of struc method is bn called)
+}
