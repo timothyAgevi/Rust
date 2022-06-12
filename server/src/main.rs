@@ -9,6 +9,9 @@ let put=Method::PUT;
     let server= Server::new("127.0.0.1:8080".to_string());//convert from string literal/slice to String
     server.run();
 }
+mod server {
+
+
 //struct defination
 struct Server{
     addr:String,
@@ -28,10 +31,12 @@ impl Server{
     println!("Server  Listening on {}" ,self.addr);
   }
 }
+
+}
 //request
 struct Request{
     path:String,
-    query_string:String,
+    query_string:Option<String>,
     method:Method,
 }
 //enum
@@ -40,11 +45,11 @@ enum Method{
     DELETE,
     POST,
     PUT,
-    HEAD,
-    CONNECT,
-    OPTIONS,
-    TRACE,
-    PATCH,
+    // HEAD,
+    // CONNECT,
+    // OPTIONS,
+    // TRACE,
+    // PATCH,
 }
 
 /*
