@@ -51,3 +51,6 @@ cargo new <appname>
 -Prevents data races at compile time.
 -can have many immutable borrows but only 1 mutable borrow.
 -references are immutable by default.(&)
+# module
+-everything is private within a module.
+-hence declared public using pub keyword.
