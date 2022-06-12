@@ -1,4 +1,10 @@
 fn main() {
+//Request variables
+let get =Method::GET;
+let delete=Method::DELETE;
+let post =Method::POST;
+let put=Method::PUT;
+    
     //instance of server
     let server= Server::new("127.0.0.1:8080".to_string());//convert from string literal/slice to String
     server.run();
@@ -26,10 +32,10 @@ impl Server{
 struct Request{
     path:String,
     query_string:String,
-    method:Methods,
+    method:Method,
 }
 //enum
-enum Methods{
+enum Method{
     GET,
     DELETE,
     POST,
