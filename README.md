@@ -1,6 +1,6 @@
 # Rust
 
-#Installation on Ubuntu
+## Installation on Ubuntu
 https://doc.rust-lang.org/stable/book/
 
 comand: curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
