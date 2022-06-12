@@ -18,3 +18,6 @@ comand:
 # rustup --version //1.24
 info: This is the version for the rustup toolchain manager, not //the rustc compiler.
 info: The currently active `rustc` version is `rustc 1.61.0 (fe5b13d68 2022-05-18)`
+
+##Development Environment
+-install  rust-analyzer extension
