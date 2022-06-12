@@ -1,5 +1,6 @@
 fn main() {
-    let mars_weight=calculate_weight_on_mars(100.0);
+    let mut  mars_weight=calculate_weight_on_mars(100.0);
+    mars_weight=mars_weight * 1000.0;
     println!("Weight on Mars:{}kg",mars_weight);//macros:call ending with '!',receives variable number of args
 //macros:rust code that writes other rust code
     
