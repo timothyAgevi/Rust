@@ -10,7 +10,7 @@ comand:
 # source $HOME/.cargo/env
 # source $HOME/.bashrc  // This is only for bash shell users 
 # source $HOME/.profile
--to verify
+###to verify
 # rustc --version //rustc 1.62.0
 # cargo--version
 # rustup --version //1.24
