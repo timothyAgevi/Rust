@@ -21,3 +21,5 @@ info: The currently active `rustc` version is `rustc 1.61.0 (fe5b13d68 2022-05-1
 
 ##Development Environment
 -install  rust-analyzer extension
+##NB
+-packages are called crates
