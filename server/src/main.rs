@@ -1,6 +1,6 @@
 fn main() {
     //instance of server
-    let server= Server::new("127.0.0.1:8080".to_string());
+    let server= Server::new("127.0.0.1:8080".to_string());//convert from string literal/slice to String
     server.run();
 }
 //struct defination
@@ -19,6 +19,6 @@ impl Server{
   }
   //run method
   fn run(self){// run takes ownership of struc instance
-    
+    println!("Server  Listening on {}" ,self.addr);
   }
 }
