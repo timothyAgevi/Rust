@@ -13,7 +13,7 @@ mod server {
 
 
 //struct defination
-struct Server{
+ pub struct Server{
     addr:String,
 }
 //struct implementation
@@ -27,7 +27,7 @@ struct Server{
     }
   }
   //run method
-  fn run(self){// run takes ownership of struc instance
+ pub fn run(self){// run takes ownership of struc instance
     println!("Server  Listening on {}" ,self.addr);
   }
 }
