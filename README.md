@@ -20,7 +20,7 @@ info: This is the version for the rustup toolchain manager, not //the rustc comp
 info: The currently active `rustc` version is `rustc 1.61.0 (fe5b13d68 2022-05-18)`
 
 ##Development Environment
--install  rust-analyzer extension
+-install  rust-analyzer extension and rust Extension Pack
 ##NB
 -packages are called crates and added on Cargo.toml
 -Go to Crates.io and copy rand dependency
