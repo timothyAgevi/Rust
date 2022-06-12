@@ -39,12 +39,12 @@ mod request{
 struct Request{
     path:String,
     query_string:Option<String>,
-    method:Method,
+    method:super ::method::Method,
   }
 }
 //enum
 mod method{
-enum Method{
+ pub enum Method{
     GET,
     DELETE,
     POST,
