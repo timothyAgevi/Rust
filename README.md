@@ -24,3 +24,10 @@ info: The currently active `rustc` version is `rustc 1.61.0 (fe5b13d68 2022-05-1
 ##NB
 -packages are called crates and added on Cargo.toml
 -Go to Crates.io and copy rand dependency
+
+##comands
+-cargo build
+cargo run
+rustup toolchain list
+cargo new <appname>
+# cargo expand //can install rust inaries
