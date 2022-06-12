@@ -26,7 +26,7 @@ impl Server{
 struct Request{
     path:String,
     query_string:String,
-    method:String,
+    method:Methods,
 }
 //enum
 enum Methods{
