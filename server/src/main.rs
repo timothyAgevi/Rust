@@ -6,7 +6,7 @@ let post =Method::POST;
 let put=Method::PUT;
     
     //instance of server
-    let server= Server::new("127.0.0.1:8080".to_string());//convert from string literal/slice to String
+    let server= server::Server::new("127.0.0.1:8080".to_string());//convert from string literal/slice to String
     server.run();
 }
 mod server {
@@ -17,11 +17,11 @@ struct Server{
     addr:String,
 }
 //struct implementation
-impl Server{
+ impl Server{
   // struc have 2 functionalities:1method or 2.associated function/static function e.g new() 
   //methods : always take 1st parameter of self(instance of struc method is bn called)
   //:: to acess associated functions
-  fn new(addr:String)->Self{
+ pub fn new(addr:String)->Self{
     Self{
         addr
     }
