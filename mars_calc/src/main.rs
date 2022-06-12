@@ -1,3 +1,5 @@
+use std::io ;
+
 fn main() {
     let mut  mars_weight=calculate_weight_on_mars(100.0);
     mars_weight=mars_weight * 1000.0; //convert mars to grams
