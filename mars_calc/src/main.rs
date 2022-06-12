@@ -1,9 +1,16 @@
 use std::io ;
 
 fn main() {
+    println!("Enter your weight(kg):");
     //allocate new string
     let mut input=String::new();//string stored in heap dsince value unkoen at compile time,inputis its pointer
+
     io::stdin().read_line(&mut input).unwrap();
+
+    //remove whitespace from input String
+    let weight:f32=input.trim().parse().unwrap();
+    println!("{}",weight);
+
     println!("Input :{}",input);
     let  mars_weight=calculate_weight_on_mars(100.0);
     // mars_weight= mars_weight * 1000.0; //convert mars to grams
