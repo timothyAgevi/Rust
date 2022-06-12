@@ -7,12 +7,12 @@ fn main() {
 
     io::stdin().read_line(&mut input).unwrap();
 
-    //remove whitespace from input String
+    //remove whitespace : trim, from input String,unwrap incase of err
     let weight:f32=input.trim().parse().unwrap();
-    println!("{}",weight);
+    dbg!(weight);
 
-    println!("Input :{}",input);
-    let  mars_weight=calculate_weight_on_mars(100.0);
+    
+    let  mars_weight=calculate_weight_on_mars(weight);
     // mars_weight= mars_weight * 1000.0; //convert mars to grams
     println!("Weight on Mars:{}kg",mars_weight);//macros:call ending with '!',receives variable number of args
 //macros:rust code that writes other rust code
