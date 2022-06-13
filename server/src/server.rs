@@ -21,21 +21,14 @@ pub struct Server{
     loop{
 //matching expression
 match listener.accept(){
-OK(( stream,addr))=>{
-
+  Ok((stream, _) )=>{
+  let a =5;
+  println!("OK");
 }
 Err(e)=>print!("Failed to establish a connection: {}",e)
-}
-
-      //accept: receive incoming requests
-       let res= listener.accept();
-
-       if res.is_err(){
-        continue;
-       }
-    let (stream,addr) =res.unwrap();//unwrap return a tuple
-    }
-   
+     }
     
+    }
+      
   }
 }
