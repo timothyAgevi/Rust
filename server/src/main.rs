@@ -1,5 +1,6 @@
 use http::request::Request;
 use server::Server;
+mod server;
 fn main() {
 //Request variables
 // let get =super::method ::Method::GET;
