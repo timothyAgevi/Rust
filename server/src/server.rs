@@ -19,9 +19,23 @@ pub struct Server{
 
     let listener = TcpListener::bind(&self.addr).unwrap();
     loop{
+//matching expression
+match listener.accept(){
+OK(( stream,addr))=>{
+
+}
+Err(e)=>print!("Failed to establish a connection: {}",e)
+}
+
       //accept: receive incoming requests
-      listener.accept();
+       let res= listener.accept();
+
+       if res.is_err(){
+        continue;
+       }
+    let (stream,addr) =res.unwrap();//unwrap return a tuple
     }
-    //custom tuple
+   
+    
   }
 }
