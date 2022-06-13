@@ -13,15 +13,7 @@ fn main() {
     server.run();
 }
 
-mod http{
-  
-//request
- pub mod request{
-  
-}
 
-
-}
 /*
 GET /user?id=10 HTTP/1.1\r\n
 HEADERS \r\n
