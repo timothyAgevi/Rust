@@ -18,6 +18,6 @@ pub struct Server{
     println!("Server  Listening on {}" ,self.addr);
 
     let listener = TcpListener::bind(&self.addr).unwrap();
-    
+    loop{}
   }
 }
