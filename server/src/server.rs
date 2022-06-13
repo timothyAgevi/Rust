@@ -16,6 +16,6 @@ pub struct Server{
   //run method
  pub fn run(self){// run takes ownership of struc instance
     println!("Server  Listening on {}" ,self.addr);
-    let listener = TcpListener::bind(&self.addr);
+    let listener = TcpListener::bind(&self.addr).unwrap();
   }
 }
