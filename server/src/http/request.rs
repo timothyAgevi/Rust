@@ -7,14 +7,14 @@ use std::convert::TryFrom;
     method:Method,
 
   }
-  impl Request {
-    fn from_byte_array(buf:&[u8])->Result<Self,Self::Error>{
-      let string= String::from("asb");
-      string.encrypt();
-      buf.encrypt();//encypt buf
-      unimplemented!()
-    }
-  }
+  // impl Request {
+  //   fn from_byte_array(buf:&[u8])->Result<Self,Self::Error>{
+  //     let string= String::from("asb");
+  //     string.encrypt();
+  //     buf.encrypt();//encypt buf
+  //     unimplemented!()
+  //   }
+  // }
   //trait for type
   impl TryFrom<&[u8]> for Request{
     type Error=String;
@@ -22,20 +22,21 @@ use std::convert::TryFrom;
        unimplemented!()// macro caled on unimplwnrted function to suoprese errors at compile time. once functuion runs errors apperar,
     }
   }
+//remove code below here
 
   //trait for encryption
-  trait Encrypt{
-    fn encrypt( &self)->Self;
-  }
-   //trait implementation 
-   impl Encrypt for String{
-    fn encrypt(&self)->Self{
-      unimplemented!()
-    }
-   }
-   //trait to encrypt byteslice
-   impl Encrypt for &[u8]{
-    fn encrypt(&self)->Self{
-      unimplemented!()
-    }
-   }
+  // trait Encrypt{
+  //   fn encrypt( &self)->Self;
+  // }
+  //  //trait implementation 
+  //  impl Encrypt for String{
+  //   fn encrypt(&self)->Self{
+  //     unimplemented!()
+  //   }
+  //  }
+  //  //trait to encrypt byteslice
+  //  impl Encrypt for &[u8]{
+  //   fn encrypt(&self)->Self{
+  //     unimplemented!()
+  //   }
+  //  }

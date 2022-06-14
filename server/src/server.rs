@@ -1,4 +1,5 @@
 use std::net::{TcpListener, TcpStream};
+use crate::http::Request;
 use std::io::Read;
 //struct defination
 pub struct Server{
