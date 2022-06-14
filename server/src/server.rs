@@ -26,7 +26,7 @@ match listener.accept(){
  let mut buffer =[ 0;1024];
   match stream.read(&mut buffer){
     Ok(_)=>{
-      println!("Received a request: {}",String::from_utf8_lossy(&buffer));//haadled wen validating utf8
+      println!("Received a request: {}",String::from_utf8_lossy(&buffer));//haadled wen validating utf8,convert buffer to request
     }
     Err(e)=>print!("Failed to read from connection :{}",e)
   }
