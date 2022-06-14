@@ -1,5 +1,8 @@
-use std::net::{TcpListener, TcpStream};
 use crate::http::Request;
+use crate::http::request;
+use std::convert::TryFrom;
+use std::convert::TryInto;
+use std::net::{TcpListener, TcpStream};
 use std::io::Read;
 //struct defination
 pub struct Server{
@@ -28,6 +31,15 @@ match listener.accept(){
   match stream.read(&mut buffer){
     Ok(_)=>{
       println!("Received a request: {}",String::from_utf8_lossy(&buffer));//haadled wen validating utf8,convert buffer to request
+
+       match Request::try_from(&buffer[..]){
+        Ok(request)=>{},
+        Err(e)=>println!("Failed to parse")
+         
+       }
+      
+
+
     }
     Err(e)=>print!("Failed to read from connection :{}",e)
   }
