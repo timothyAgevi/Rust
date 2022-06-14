@@ -18,4 +18,6 @@ use std::convert::TryFrom;
   }
 
   //trait for encryption
-  fn
+  trait Encrypt{
+    fn encrypt( &self)->Self;
+  }
