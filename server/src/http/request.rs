@@ -5,9 +5,13 @@ use std::convert::TryFrom;
     path:String,
     query_string:Option<String>,
     method:Method,
+
   }
   impl Request {
-    fn from_byte_array(buf:&[u8])->Result<Self,String>{}
+    fn from_byte_array(buf:&[u8])->Result<Self,Self::Error>{
+      let string= String::from("asb");
+      string.encrypt();
+    }
   }
   //trait for type
   impl TryFrom<&[u8]> for Request{
@@ -21,3 +25,15 @@ use std::convert::TryFrom;
   trait Encrypt{
     fn encrypt( &self)->Self;
   }
+   //trait implementation 
+   impl Encrypt for String{
+    fn encrypt(&self)->Self{
+      unimplemented!()
+    }
+   }
+   //trait to encrypt byteslice
+   impl Encrypt for &[u8]{
+    fn encrypt(&self)->Self{
+      unimplemented!()
+    }
+   }
