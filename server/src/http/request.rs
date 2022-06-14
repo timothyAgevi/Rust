@@ -11,6 +11,8 @@ use std::convert::TryFrom;
     fn from_byte_array(buf:&[u8])->Result<Self,Self::Error>{
       let string= String::from("asb");
       string.encrypt();
+      buf.encrypt();//encypt buf
+      unimplemented!()
     }
   }
   //trait for type
