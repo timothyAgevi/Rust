@@ -29,6 +29,9 @@ use std::str;
         let (path,request)= get_next_word(request).ok_or(ParseError::InvaldEncoding)?;
         let (protocal,_)= get_next_word(request).ok_or(ParseError::InvaldEncoding)?;
 
+         if protocal != "HTTP/1.1"{
+          return Err(ParseError::InvalidProtocal);
+         }
        unimplemented!()// macro caled on unimplwnrted function to suoprese errors at compile time. once functuion runs errors apperar,
     }
   }
