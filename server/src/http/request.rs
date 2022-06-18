@@ -26,6 +26,8 @@ use std::str;
        //trasform option to result
        //variable shadowing:reusing local variable names ,its not reassigning
         let (method,request)= get_next_word(request).ok_or(ParseError::InvaldEncoding)?;
+        let (path,request)= get_next_word(request).ok_or(ParseError::InvaldEncoding)?;
+        let (protocal,_)= get_next_word(request).ok_or(ParseError::InvaldEncoding)?;
 
        unimplemented!()// macro caled on unimplwnrted function to suoprese errors at compile time. once functuion runs errors apperar,
     }
@@ -35,7 +37,7 @@ use std::str;
 fn get_next_word(request:&str)->Option<(&str,&str)>{
 
   for (i,c) in request.chars().enumerate(){//char is AN ITERATOR,.enumerate gets the index
-if c ==' '{
+if c ==' ' || c=='\r' {
   return Some((&request[..i],&request[i +1..]))
 }
 }
