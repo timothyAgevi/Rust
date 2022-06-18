@@ -1,10 +1,9 @@
-use std::str::Utf8Error;
-use super::method::Method;
+use super::method::{MethodError,Method };
 use std::convert::TryFrom;
 use std::error::Error;
 use std::fmt::{Display, Formatter,Debug,Result as FmtResult};
 use std::str;
-
+use std::str::Utf8Error;
  pub struct Request{
     path:String,
     query_string:Option<String>,
@@ -24,14 +23,17 @@ use std::str;
 
        
        //trasform option to result
-       //variable shadowing:reusing local variable names ,its not reassigning
-        let (method,request)= get_next_word(request).ok_or(ParseError::InvaldEncoding)?;
-        let (path,request)= get_next_word(request).ok_or(ParseError::InvaldEncoding)?;
-        let (protocal,_)= get_next_word(request).ok_or(ParseError::InvaldEncoding)?;
+           //variable shadowing:reusing local variable names ,its not reassigning
+        let (method,request)= get_next_word(request).ok_or(ParseError::InvalidRequest)?;
+        let (path,request)= get_next_word(request).ok_or(ParseError::InvalidRequest)?;
+        let (protocal,_)= get_next_word(request).ok_or(ParseError::InvalidRequest)?;
 
          if protocal != "HTTP/1.1"{
           return Err(ParseError::InvalidProtocal);
          }
+         //convert method from string to enum
+         let method:Method =method.parse()?;
+
        unimplemented!()// macro caled on unimplwnrted function to suoprese errors at compile time. once functuion runs errors apperar,
     }
   }
@@ -62,6 +64,12 @@ InvalidMethod,
         Self::InvalidProtocal=>"Invalid Protocal",
          Self::InvalidMethod=>"Invalid Method",
       }
+    }
+  }
+//implementation of MethodError
+  impl From <MethodError> for ParseError{
+    fn from(_:MethodError)->Self{
+      Self::InvalidMethod
     }
   }
 //implentation for from utf8 error
