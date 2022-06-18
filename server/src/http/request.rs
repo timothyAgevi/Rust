@@ -19,23 +19,28 @@ use std::str;
     //GET /search?name=abc&sort=1 HTTP/1.1
 
     fn try_from(buf: &[u8])->Result<Self,Self::Error>{
-       match str::from_utf8(buf){
-        Ok(request)=>{},
-        Err(_)=>return Err(ParseError::InvaldEncoding),
-       }
-
-        match str::from_utf8(buf).or(Err(ParseError::InvaldEncoding)){
-        Ok(request)=>{}
-        Err(e)=>return Err(e),
-       }
-
+      
        let request =str::from_utf8(buf)?;
+
+       
+       //trasform option to result
+       //variable shadowing:reusing local variable names ,its not reassigning
+        let (method,request)= get_next_word(request).ok_or(ParseError::InvaldEncoding)?;
 
        unimplemented!()// macro caled on unimplwnrted function to suoprese errors at compile time. once functuion runs errors apperar,
     }
   }
 
+//helper function to get next word
+fn get_next_word(request:&str)->Option<(&str,&str)>{
 
+  for (i,c) in request.chars().enumerate(){//char is AN ITERATOR,.enumerate gets the index
+if c ==' '{
+  return Some((&request[..i],&request[i +1..]))
+}
+}
+None
+}
   //Error enum
  pub enum ParseError{
 InvalidRequest,//broken request
