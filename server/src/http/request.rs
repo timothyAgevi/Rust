@@ -21,7 +21,7 @@ use std::str;
     fn try_from(buf: &[u8])->Result<Self,Self::Error>{
        match str::from_utf8(buf){
         Ok(request)=>{},
-        Err(_)=>return Err(ParseError::InvaldEncoding)
+        Err(_)=>return Err(ParseError::InvaldEncoding),
        }
 
         match str::from_utf8(buf).or(Err(ParseError::InvaldEncoding)){
@@ -54,6 +54,13 @@ InvalidMethod,
       }
     }
   }
+//implentation for from utf8 error
+impl From <Utf8Error> for ParseError{
+  fn from(_:Utf8Error)->Self{
+    Self::InvaldEncoding
+  }
+}
+
   //impl for display 
   impl Display for ParseError{
     fn fmt(&self,f:&mut Formatter)->FmtResult{
