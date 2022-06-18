@@ -54,3 +54,13 @@ cargo new <appname>
 # module
 -everything is private within a module.
 -hence declared public using pub keyword.
+
+## binding to tcp
+# netcat -k -l <port number>
+
+## Loops
+-can be labelled
+'outer :loop{
+    loop{ continue 'outer ;}
+}
+-infinite loop : loop{}
