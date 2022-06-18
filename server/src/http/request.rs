@@ -33,6 +33,8 @@ use std::str::Utf8Error;
          }
          //convert method from string to enum
          let method:Method =method.parse()?;
+         //define query string
+         let mut query_strng=None;
 
        unimplemented!()// macro caled on unimplwnrted function to suoprese errors at compile time. once functuion runs errors apperar,
     }
